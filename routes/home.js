@@ -6,6 +6,6 @@ const homeController = require('../controllers/homeController');
 
 //Al recibir request de home, usa homeController
 router.get('/', homeController.getHomePage);
-
+router.get('/sms', homeController.getAllSMS);
 
 module.exports = router;

@@ -9,6 +9,9 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
+//Mongo DB
+const mongoConnect = require('./util/database').mongoConnect;
+
 //Routes functions
 const adminRoutes = require('./routes/admin');
 const homeRoutes = require('./routes/home');
@@ -26,4 +29,8 @@ app.use(homeRoutes);
 app.use(errorRoutes);
 
 //Server port
-app.listen(3000);
+const PORT = process.env.PORT || 3000;
+//Connect DB
+mongoConnect(() => {
+  app.listen(PORT);
+});
