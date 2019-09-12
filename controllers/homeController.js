@@ -1,5 +1,3 @@
-const Sms = require('../models/sms');
-
 exports.getHomePage = (req, res, next) => {
   res.render('home', {
     path: '/',
@@ -9,14 +7,14 @@ exports.getHomePage = (req, res, next) => {
 
 exports.getAllSMS = (req, res, next) => {
   Sms.fetchAll()
-  .then(sms => {
-    res.render('sms', {
-      smsData: sms,
-      pageTitle: 'Sms',
-      path: 'sms'
+    .then(sms => {
+      res.render('sms', {
+        smsData: sms,
+        pageTitle: 'Sms',
+        path: 'sms'
+      })
     })
-  })
-  .catch(err => {
-    console.log(err);
-  });
+    .catch(err => {
+      console.log(err);
+    });
 };
