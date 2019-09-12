@@ -48,6 +48,7 @@ app.use(homeRoutes);
 app.use(authRoutes);
 
 //Server port
+
 const PORT = process.env.PORT || 3000;
 //Connect DB
 mongoose.connect(MongoDB_URI)
