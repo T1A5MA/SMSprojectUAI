@@ -23,9 +23,8 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 //Routes functions
-const adminRoutes = require('./routes/admin');
 const homeRoutes = require('./routes/home');
-const errorRoutes = require('./routes/error');
+//const errorRoutes = require('./routes/error');
 const authRoutes = require('./routes/auth');
 
 //Middlewares - Encode Body + Static Files
@@ -41,12 +40,10 @@ app.use(session({
   store: store,
 }))
 
-//Routes to admin (login)
-app.use('/admin', adminRoutes);
-//Routes to else (no login)
+//Routes to home
 app.use(homeRoutes);
 //Routes to error pages
-app.use(errorRoutes);
+//app.use(errorRoutes);
 //Routes to auth
 app.use(authRoutes);
 

@@ -2,19 +2,6 @@ exports.getHomePage = (req, res, next) => {
   res.render('home', {
     path: '/',
     pageTitle: 'Home',
+    isAuthenticated: req.session.isLoggedIn,
   });
-};
-
-exports.getAllSMS = (req, res, next) => {
-  Sms.fetchAll()
-    .then(sms => {
-      res.render('sms', {
-        smsData: sms,
-        pageTitle: 'Sms',
-        path: 'sms'
-      })
-    })
-    .catch(err => {
-      console.log(err);
-    });
 };

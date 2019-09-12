@@ -1,10 +1,35 @@
 <%- include('includes/header.ejs') %>
 <%- include('includes/nav.ejs') %>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
-  Login
-</button>
 
-<a href="login"><button type="button" class="btn btn-primary btn-lg">Login</button></a>
+<% if (isAuthenticated) { %>
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Usuario logeado</h4>
+    <h6 class="card-subtitle text-muted">Esto solo lo ve un user logeado</h6>
+  </div>
+  <div class="card-body">
+    <p class="card-text">Text</p>
+    <a href="#" class="card-link">Link 1</a>
+    <a href="#" class="card-link">Link 2</a>
+  </div>
+</div>
+
+<% } else { %>
+<!-- Button trigger modal -->
+<div class="jumbotron">
+  <h1 class="display-3">HOME</h1>
+  <p class="lead">Jumbo helper text</p>
+  <hr class="my-2">
+  <p>More info</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
+  </p>
+</div>
+<% } %>
+
+
+
+
+
 <%- include('includes/footer.ejs') %>
