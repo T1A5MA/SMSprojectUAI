@@ -1,4 +1,34 @@
-const mongodb = require('mongodb');
+const mongoose = require('mongoose');
+
+const Schema = mongoose.Schema;
+
+//Estructura DB
+const smsSchema = new Schema({
+  numero: {
+    type: Number,
+    required: true
+  },
+  region: {
+    type: String,
+    required: false
+  },
+  ciudad: {
+    type: String,
+    required: false
+  },
+  texto: {
+    type: String,
+    required: false
+  },
+});
+
+module.exports = mongoose.model('Sms', smsSchema);
+
+
+
+
+
+/* const mongodb = require('mongodb');
 const getDB = require('../util/database').getDB;
 
 class Sms {
@@ -53,4 +83,4 @@ class Sms {
   }
 }
 
-module.exports = Sms;
+module.exports = Sms; */
