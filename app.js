@@ -1,3 +1,4 @@
+require('dotenv').config();
 //const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -57,3 +58,8 @@ mongoose.connect(MongoDB_URI)
   }).catch(err => {
     console.log(err);
   });
+
+const twilio_ACCOUNTSID = process.env.twilio_ACCOUNTSID;
+const twilio_AUTHTOKEN = process.env.twilio_AUTHTOKEN;
+const twilio_NUMBER = process.env.twilio_NUMBER;
+twilio_CLIENT = require('twilio')(twilio_ACCOUNTSID, twilio_AUTHTOKEN);
