@@ -1,6 +1,7 @@
 # SMSprojectUAI
  Proyecto de SMS  
 # Tecnologias:
- Node.js 
- Express.js 
- EJS 
+ - Node.js 
+ - Express.js 
+ - EJS  
+ - Mongoose (Temporal)
