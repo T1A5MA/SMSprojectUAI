@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-//Estructura DB
+//Estructura DB SMS Twilio
 const smsTwilioSchema = new Schema({
   account_sid: {
     type: String,
@@ -62,4 +62,4 @@ const smsTwilioSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model('Sms', smsTwilioSchema);
+module.exports = mongoose.model('SmsTwilio', smsTwilioSchema);

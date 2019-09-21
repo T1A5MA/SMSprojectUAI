@@ -1,5 +1,6 @@
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
-const Sms = require('../models/smsModel');
+const SmsTwilio = require('../models/smsTwilioModel');
+const SmsNexmo = require('../models/smsNexmoModel');
 
 
 exports.postTwilioSMS = (req, res, next) => {
