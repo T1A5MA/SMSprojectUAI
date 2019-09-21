@@ -11,3 +11,8 @@ exports.postTwilioSMS = (req, res, next) => {
   });
   res.end(twiml.toString());
 };
+
+//Logica SMS Nexmo
+exports.postNexmoSMS = (req, res, next) => {
+
+};
