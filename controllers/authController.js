@@ -66,8 +66,7 @@ exports.postLogin = (req, res, next) => {
             req.session.isLoggedIn = true;
             req.session.user = user;
             return req.session.save(err => {
-              //Si falla el guardado de la sesion
-              res.redirect('/');
+              res.redirect('/dashboard');
             });
           }
           //Si pass no son iguales

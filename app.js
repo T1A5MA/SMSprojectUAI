@@ -29,6 +29,8 @@ const homeRoutes = require('./routes/home');
 const authRoutes = require('./routes/auth');
 //Ruta de SMS, aqui iran las rutas de SMS con Twilio y Nexmo, ver sms.js y smsController.js
 const smsRoutes = require('./routes/sms');
+//Ruta para vistas de usuario
+const usersRoutes = require('./routes/users');
 
 //Middlewares - Encode Body + Static Files
 app.use(
@@ -56,6 +58,8 @@ app.use(homeRoutes);
 app.use(authRoutes);
 //Rutas a los SMS
 app.use(smsRoutes);
+//Rutas vistas de usuario
+app.use(usersRoutes);
 
 //Server port
 
