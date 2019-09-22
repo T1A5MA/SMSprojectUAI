@@ -3,61 +3,38 @@ const Schema = mongoose.Schema;
 
 //Estructura DB SMS Twilio
 const smsTwilioSchema = new Schema({
-  account_sid: {
+  SmsSid: {
+    type: String,
+    required: true,
+  },
+  ToCity: {
     type: String,
   },
-  api_version: {
+  ToState: {
     type: String,
   },
-  body: {
+  ToCountry: {
     type: String,
   },
-  date_created: {
+  SmsStatus: {
     type: String,
   },
-  date_sent: {
+  FromCity: {
     type: String,
   },
-  date_updated: {
+  FromState: {
     type: String,
   },
-  direction: {
+  FromCountry: {
     type: String,
   },
-  error_code: {
+  Body: {
     type: String,
   },
-  error_message: {
+  From: {
     type: String,
   },
-  from: {
-    type: String,
-  },
-  messaging_service_sid: {
-    type: String,
-  },
-  num_media: {
-    type: Number,
-  },
-  num_segments: {
-    type: Number,
-  },
-  price: {
-    type: Number,
-  },
-  price_unit: {
-    type: String,
-  },
-  sid: {
-    type: String,
-  },
-  status: {
-    type: String,
-  },
-  to: {
-    type: String,
-  },
-  uri: {
+  To: {
     type: String,
   },
 });
