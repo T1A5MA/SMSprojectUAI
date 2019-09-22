@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs');
-const User = require('../models/user');
+const User = require('../models/userModel');
 
 exports.getLogin = (req, res, next) => {
   res.render('auth/login', {
@@ -66,8 +66,7 @@ exports.postLogin = (req, res, next) => {
             req.session.isLoggedIn = true;
             req.session.user = user;
             return req.session.save(err => {
-              //Si falla el guardado de la sesion
-              res.redirect('/');
+              res.redirect('/dashboard');
             });
           }
           //Si pass no son iguales
