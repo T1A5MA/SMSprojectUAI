@@ -38,7 +38,7 @@ exports.postTwilioSMS = (req, res, next) => {
    })
   .catch((err)=> {
     console.log(err);
-  })
+  });
 
   twiml.message('Se ha recibido correctamente su SMS de emergencia');
   res.writeHead(200, {
